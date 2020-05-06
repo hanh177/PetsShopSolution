@@ -1,4 +1,4 @@
-﻿using eShopSoluPetsShopSolutiontion.Data.Configurations;
+﻿using PetsShopSolutiontion.Data.Configurations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PetsShopSolution.Data.Configurations;
@@ -6,6 +6,7 @@ using PetsShopSolution.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using eShopSolution.Data.Extensions;
 
 namespace PetsShopSolution.Data.EF
 {
@@ -63,8 +64,8 @@ namespace PetsShopSolution.Data.EF
             //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
 
             //Data seeding
-            //modelBuilder.Seed();
-            //;base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
+            //base.OnModelCreating(modelBuilder);
         }
     }
 }

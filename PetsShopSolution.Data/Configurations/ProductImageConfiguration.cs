@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text; 
-namespace eShopSoluPetsShopSolutiontion.Data.Configurations
+namespace PetsShopSolutiontion.Data.Configurations
 {
     public class ProductImageConfiguration : IEntityTypeConfiguration<ProductImage>
     {
