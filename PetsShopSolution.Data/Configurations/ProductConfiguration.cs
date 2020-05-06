@@ -11,7 +11,7 @@ namespace PetsShopSolution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Product");
+            builder.ToTable("Products");
             builder.HasKey(x => x.ID);
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.OriginalPrice).IsRequired();

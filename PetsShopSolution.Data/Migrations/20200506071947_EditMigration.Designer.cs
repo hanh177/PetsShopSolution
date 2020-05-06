@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetsShopSolution.Data.EF;
 
 namespace PetsShopSolution.Data.Migrations
 {
     [DbContext(typeof(PetsShopDbContext))]
-    partial class PetsShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200506071947_EditMigration")]
+    partial class EditMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,23 +33,6 @@ namespace PetsShopSolution.Data.Migrations
                     b.HasKey("Key");
 
                     b.ToTable("AppConfigs");
-
-                    b.HasData(
-                        new
-                        {
-                            Key = "HomeTitle",
-                            Value = "This is home page of eShopSolution"
-                        },
-                        new
-                        {
-                            Key = "HomeKeyword",
-                            Value = "This is keyword of eShopSolution"
-                        },
-                        new
-                        {
-                            Key = "HomeDescription",
-                            Value = "This is description of eShopSolution"
-                        });
                 });
 
             modelBuilder.Entity("PetsShopSolution.Data.Entities.AppRole", b =>
@@ -218,30 +203,6 @@ namespace PetsShopSolution.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            IsShownOnHome = true,
-                            Name = "Chó",
-                            SeoAlias = "cho",
-                            SeoDescription = "Hãy lựa chọn những chú cún bạn yêu thích",
-                            SeoTitle = "Những chú cún con đáng yêu nhất đang chờ bạn đón về nhà",
-                            SortOrder = 1,
-                            Status = 1
-                        },
-                        new
-                        {
-                            ID = 2,
-                            IsShownOnHome = true,
-                            Name = "Mèo",
-                            SeoAlias = "Meo",
-                            SeoDescription = "Hãy lựa chọn những chú mèo bạn yêu thích",
-                            SeoTitle = "Quàng thượng đang chờ sen rinh về :P",
-                            SortOrder = 2,
-                            Status = 1
-                        });
                 });
 
             modelBuilder.Entity("PetsShopSolution.Data.Entities.Comment", b =>
@@ -537,44 +498,6 @@ namespace PetsShopSolution.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            DateCreated = new DateTime(2020, 5, 6, 14, 55, 19, 168, DateTimeKind.Local).AddTicks(5186),
-                            Description = "Chó Husky lông đen 3 tháng tuổi",
-                            Details = "Chó Husky lông đen 3 tháng tuổi",
-                            Heart = 0,
-                            Name = "Chó Husky lông đen 3 tháng tuổi",
-                            OriginalPrice = 3200000m,
-                            Price = 6000000m,
-                            SeoAlias = "Cho-Husky-long-den-3-thang-tuoi",
-                            SeoDescription = "Chó Husky lông đen 3 tháng tuổi",
-                            SeoTitle = "Chó Husky lông đen 3 tháng tuổi",
-                            SortOrder = 0,
-                            Stars = 0,
-                            Stock = 0,
-                            ViewCount = 0
-                        },
-                        new
-                        {
-                            ID = 2,
-                            DateCreated = new DateTime(2020, 5, 6, 14, 55, 19, 171, DateTimeKind.Local).AddTicks(5448),
-                            Description = "Mèo Ai Cập lông trắng mắt xanh",
-                            Details = "Mèo Ai Cập lông trắng mắt xanh",
-                            Heart = 0,
-                            Name = "Mèo Ai Cập lông trắng mắt xanh",
-                            OriginalPrice = 1500000m,
-                            Price = 2300000m,
-                            SeoAlias = "meo-ai-cap-long-trang-mat-xanh",
-                            SeoDescription = "Mèo Ai Cập lông trắng mắt xanh",
-                            SeoTitle = "Mèo Ai Cập lông trắng mắt xanh",
-                            SortOrder = 0,
-                            Stars = 0,
-                            Stock = 0,
-                            ViewCount = 0
-                        });
                 });
 
             modelBuilder.Entity("PetsShopSolution.Data.Entities.ProductImage", b =>
@@ -630,18 +553,6 @@ namespace PetsShopSolution.Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductInCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            ProductId = 1
-                        },
-                        new
-                        {
-                            CategoryId = 2,
-                            ProductId = 2
-                        });
                 });
 
             modelBuilder.Entity("PetsShopSolution.Data.Entities.Promotion", b =>
